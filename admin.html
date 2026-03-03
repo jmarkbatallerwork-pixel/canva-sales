@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sales Dashboard</h1>
+
+    <div id="loginSection">
+      <h3>Admin Login</h3>
+      <input type="email" id="loginEmail" placeholder="Email" />
+      <input type="password" id="loginPassword" placeholder="Password" />
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <div id="dashboard" style="display:none;">
+      <button onclick="loadData('today')">Today</button>
+      <button onclick="loadData('7')">Last 7 Days</button>
+      <button onclick="loadData('30')">Last 30 Days</button>
+      <button onclick="loadData('month')">This Month</button>
+      <button onclick="loadData('year')">This Year</button>
+
+      <h3>Total Sales: <span id="totalSales">0</span></h3>
+      <h3>Total Revenue: $<span id="totalRevenue">0</span></h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Plan</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Receipt</th>
+          </tr>
+        </thead>
+        <tbody id="salesTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
